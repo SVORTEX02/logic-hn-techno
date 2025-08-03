@@ -1,0 +1,304 @@
+<script>
+  for (var i = 0; i < 3; i++) {
+    document.write("hello<br/>");
+    //1
+
+    for (var k = 0; k < 2; k++) {
+      document.write("virin<br/>");
+    }
+    //2
+
+    document.write("raam<br/>");
+    //1
+  }
+
+  /*
+    hello
+    virin
+    virin
+    raam
+       total = 3 times print
+  */
+
+  var k = 0;
+
+  for (var i = 0; i < 3; i++) {
+    document.write("hello<br/>");
+
+    for (; k < 2; k++) {
+      document.write("virin<br/>");
+    }
+
+    document.write("raam<br/>");
+  }
+
+  /*
+    hello
+    virin
+    virin
+    raam
+    hello
+    raam
+    hello
+    raam
+  */
+
+  for (var i = 100, l = 0; i > 20; i = i - 30) {
+    for (var j = 50; j > 10; j = j - 5) {
+      document.write("hello<br/>");
+      l++;
+    }
+  }
+  document.write("your answer=" + l);
+
+  //i=100 i>20
+  //j=50 j>10 hello
+
+  //j=50-5=45 j>10 hello
+  //j=45-5=40 j>10 hello
+  //j=40-5=35 j>10 hello
+  //j=35-5=30 j>10 hello
+  //j=30-5=25 j>10 hello
+  //j=25-5=20 j>10 hello
+  //j=20-5=15 j>10 hello
+  //j=15-5=10 j>10 hello
+
+  //i=70 i>20
+  //j=50 j>10 hello
+
+  //j=50-5=45 j>10 hello
+  //j=45-5=40 j>10 hello
+  //j=40-5=35 j>10 hello
+  //j=35-5=30 j>10 hello
+  //j=30-5=25 j>10 hello
+  //j=25-5=20 j>10 hello
+  //j=20-5=15 j>10 hello
+  //j=15-5=10 j>10 hello
+
+  //i=40 i>20
+  //j=50 j>10 hello
+
+  //j=50-5=45 j>10 hello
+  //j=45-5=40 j>10 hello
+  //j=40-5=35 j>10 hello
+  //j=35-5=30 j>10 hello
+  //j=30-5=25 j>10 hello
+  //j=25-5=20 j>10 hello
+  //j=20-5=15 j>10 hello
+  //j=15-5=10 j>10 hello
+
+  //i=10 i>20 false
+
+  /* 
+      total hello print = 24 
+  */
+
+  var j = 50;
+
+  for (var i = 100, l = 0; i > 20; i = i - 30) {
+    for (; j > 10; j = j - 5) {
+      document.write("hello<br/>");
+      l++;
+    }
+    document.write("radhe radhe<br/>");
+  }
+  document.write("your answer=" + l);
+
+
+
+  //i=100 i>20 j=50 j>10 hello
+  //  //j=50-5=45 j>10 hello
+  //j=45-5=40 j>10 hello
+  //j=40-5=35 j>10 hello
+  //j=35-5=30 j>10 hello
+  //j=30-5=25 j>10 hello
+  //j=25-5=20 j>10 hello
+  //j=20-5=15 j>10 hello
+  //j=15-5=10 j>10 hello
+  //radhe radhe
+  //radhe
+  //radhe
+  //8
+
+  var m = 5;
+  for (var i = 0; i < 7; i = i + 1) {
+    for (var j = 0; j < 5; j = j + 1) {
+      i = i + 3;
+      m = m + i;
+      document.write("virin" + m + "<br/>");
+    }
+
+    document.write("radhe<br/>");
+  }
+
+  //m=5
+  //i=0 i<7
+  //j=0 j<5 i=4  
+  //j=1 j<5 i=7
+  //j=2 j<5 i=10
+  //j=3 j<5 i=13
+  //j=4 j<5 i=16
+  //j=5 j<5 i=19 false
+
+  var m = 5;
+  for (var i = 0; i < 7; i = i + 1) {
+    for (var j = 0; j < 5; j = j + 1) {
+      i + 3;
+      m = m + i;
+      document.write("virin" + m + "<br/>");
+    }
+  }
+
+  /*
+    virin5
+virin5
+virin5
+virin5
+virin5
+virin6
+virin7
+virin8
+virin9
+virin10
+virin12
+virin14
+virin16
+virin18
+virin20
+virin23
+virin26
+virin29
+virin32
+virin35
+virin39
+virin43
+virin47
+virin51
+virin55
+virin60
+virin65
+virin70
+virin75
+virin80
+virin86
+virin92
+virin98
+virin104
+virin110
+
+  */
+
+  var m = 5;
+  for (var i = 0, k = 0; i < 120; i++) {
+    for (var j = 0; j < i; j++) {
+      document.write("hello<br/>");
+      k++;
+      m = m * j;
+      i = i + m;
+    }
+    i = i + 15;
+    document.write("radhe<br/>");
+  }
+  //yha thi baki chhe
+  document.write(k);
+  var i = 5;
+  var o = 0;
+  for (var j = 500, op = 0; j > 20; j = j - 10) {
+    for (var k = 0; k < j || i > 0; k = k + 30) {
+      document.write("hello<br/>");
+      i--;
+      o++;
+      k = k + 20;
+      j = j - 50;
+      op++;
+      document.write(j + "vijju<br/>");
+    }
+
+    for (var l = 210; l >= j || i > 0; l = l - 40) {
+      document.write("hello<br/>");
+      o++;
+      op++;
+    }
+  }
+  document.write("total = " + op);
+
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 2; j++) {
+      for (var k = 1; k < 4; k++) {
+        document.write("hello<br/>");
+      }
+
+      document.write("radhe<br/>");
+    }
+  }
+  var m = 100;
+  for (var i = 0, he = 0, ra = 0, ka = 0; i < 200; i++) {
+    for (var j = 0; j < 5; j++) {
+      for (var k = 1; k <= j; k++) {
+        i = i + 20;
+        he++;
+        document.write("hello<br/>");
+      }
+      for (var k = 2; k <= 9; k = k * 1.5) {
+        i = i + 20;
+        ra++;
+        document.write("radhe<br/>");
+      }
+    }
+    for (var l = 0; l < m; l++) {
+      i = i + 10;
+      ka++;
+      m = m - 20;
+      document.write("krishna<br/>");
+    }
+  }
+  document.write("hellocounter=" + he + "<br/>");
+  document.write("radhecounter=" + ra + "<br/>");
+  document.write("krishnacounter=" + ka + "<br/>");
+
+  var j = 0;
+  for (var i = 0; i < 3; i++) {
+    console.log("hello");
+
+    for (; j < 2; j++) {
+      console.log("vijay");
+    }
+
+    console.log("radha");
+  }
+
+  for (var i = 0; i < 200; i = i + 20) {
+    for (var j = 120; j < i; j = j + 10) {
+      console.log("hello");
+    }
+  }
+
+  /*
+    total = 5 time hello print
+  */
+
+  for (var i = 0; i < 5; i = i + 1) {
+    for (var j = i; j <= i; j = j + 1) {
+      document.write("hello<br/>");
+    }
+  }
+
+  var i = 5;
+  var o = 0;
+  for (var j = 500; j > 20; j = j - 10) {
+    for (var k = 0; k < j || i > 0; k = k + 30) {
+      document.write("hello<br/>");
+      i--;
+      o++;
+      k = k + 20;
+      j = j - 50;
+      document.write(j + "vijju<br/>");
+    }
+
+    for (var l = 210; l > j && i > 0; l = l - 40) {
+      document.write("hello<br/>");
+      o++;
+    }
+  }
+  document.write(o);
+</script>

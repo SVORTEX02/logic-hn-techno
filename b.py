@@ -48,9 +48,6 @@ else:
     
     print("Loading......")
     print("------------------------------------------------------")
-   
-
-
     # login
     user_input=input("enter your username:").strip()
     user_pass=input("enter your password:").strip()
@@ -216,10 +213,12 @@ if passed:
                     pass
                 #order and dinning section -------------- 
                 elif user_want==3:
+                    order=False
                     user_h = input("Order or Dine-in? What’s your vibe today? \n ---for dinning press:1 and for ordering press:2=> ").strip()
                     if user_h=="1":
                         user_h1 = input("Choose your vibe for today: \n1) Rooftop Views\n2) Cozy Cafes\n3) Romantic Dining\n4) All-you-can-eat Buffet\nEnter the number that suits your mood: ").strip()
                         if user_h1.isdigit():
+                            order=False
                             user_h1=int(user_h1)
                             if user_h1==1:
                                 print("Top Rooftop Dining Options in Ahmedabad ")
@@ -426,23 +425,23 @@ if passed:
 
                 
                     elif user_h=="2":
-                        order=False
+                        
                         print("Order")
                         print("Options Available:")
                         print("1-THALI \n2-PIZZA  \n3-BIRYANI ")
                         user_h2=input("what's ur mood today? want to  order something or not!! \n for choosing from options: press(1,2,3):").strip()
                         print(f"Your mood has choosen to order:{user_h2}")
-                        if user_h2.isalpha():
-                            print("Please enter digit not character")
-                        else:
-                            order=True
                             
                         
-                        user_h2=int(user_h2)
-                        if user_h2.isdigit():
+                        
+                        if user_h2.isalpha():
                             print("Please enter a valid choice dont enter characters !!")
                         elif user_h2.isdigit():
+                            user_h2=int(user_h2)
+                            
                             if user_h2==1:
+                                order=True
+                                payment=True
                                 print("Thali Availabe:\n(----North indian----)  \n(----South Indian---)")
                                 user_thali=input("Which Thali you want to order \n for North indian Thali please enter 1 and For South indian Thali please Enter :2=>").strip()
                                 print(f"You Choosed:{user_thali}")
@@ -453,7 +452,6 @@ if passed:
                                     if user_thali==1:
                                         print("North Indian Thali Options \nPunjabi \nGujarati")
                                         user_north=input("For choosing punjabi thali enter 1 and for gujarati enter  2").strip()
-
                                         print(f"You choosed:{user_north}")
                                         if user_north.isalpha():
                                             print("please enter a digit")
@@ -514,11 +512,13 @@ if passed:
                                     print("order cant be done because of wrong input given")
                                 
                             elif user_h2==2:
-                                    print("Pizza Gallery:")
-                                    user_pizza=input("Enter which kind of pizza do you prefer oven baked or wood-fired: \n to order oven baked please hit 1 and for wood fired baked please enter  2:=> ").strip()
-                                    print(f"Your choosed option: {user_pizza}")
-                                    user_pizza=int(user_pizza)
-                                    if user_pizza==1:
+                                payment=True
+                                order=True
+                                print("Pizza Gallery:")
+                                user_pizza=input("Enter which kind of pizza do you prefer oven baked or wood-fired: \n to order oven baked please hit 1 and for wood fired baked please enter  2:=> ").strip()
+                                print(f"Your choosed option: {user_pizza}")
+                                user_pizza=int(user_pizza)
+                                if user_pizza==1:
                                         print("Oven-Baked \n 1) Sale & Pepe:\nMenu--> 1. Classic Margherita – ₹250\n2. Veggie Loaded Pizza – ₹320")
                                         print(" 2) The Blue Oven:\nMenu--> 1. Cheese Burst Paneer Pizza – ₹300\n2. Spicy Mexican Veg Pizza – ₹340")
                                         
@@ -548,7 +548,7 @@ if passed:
                                                 print("Please Enter a vlaid choice from menu given")
                                         else:
                                             print("Invalid choice. kindly enter 1 0r 2 ")
-                                    elif user_pizza==2:
+                                elif user_pizza==2:
                                         print("Wood-Fired Options: 1. The Wood Oven – Smoky Farmhouse ₹350, Rustic Margherita ₹280 \n 2. La Pino'z – Smoky Barbecue Paneer ₹360, Italian Herb Delight ₹300")
                                         
                                         user_fire=input("enter the choice from above two option's 1(The Wood Oven) or 2(La Pino'z)=>").strip()
@@ -577,6 +577,8 @@ if passed:
                                         else:
                                             print("Invalid choice. kindly enter 1 0r 2 ")
                             elif user_h2==3:
+                                order=True
+                                payment=True
                                 print("Biryani Zaika")
                                 print("Biryani Options: \n1. Biryani Blues – Hyderabadi Chicken ₹280, Veg Dum Biryani ₹240 \n2. Behrouz Biryani – Murgh Makhani Biryani ₹320, Subz-E-Biryani ₹270")
                                 
@@ -585,7 +587,7 @@ if passed:
                                 
                                 if user_biryani=='1':
                                     print("\nMenu--> Hyderabadi Chicken ₹280, Veg Dum Biryani ₹240")
-                                    biryani_item=input("enter the pizza you want ?? please enter 1 or 2 ").strip()
+                                    biryani_item=input("enter the biryani you want ?? please enter 1 or 2 ").strip()
                                     print(f"Your choosen:{biryani_item}")
                                     if  biryani_item=='1':
                                                 print("YOu ordred:Hyderabadi Chicken \nBill:280 \nThank you for your order!")
@@ -595,7 +597,7 @@ if passed:
                                                 print("Please Enter a vlaid choice from menu given")
                                 elif user_biryani=='2':
                                         print("\nMenu-->  Murgh Makhani Biryani ₹320, Subz-E-Biryani ₹270")
-                                        biryani_item=input("enter the pizza you want ?? please enter 1 or 2 ").strip()
+                                        biryani_item=input("enter the biryani you want ?? please enter 1 or 2 ").strip()
                                         print(f"Your choosen:{ biryani_item}")
                                         if  biryani_item=='1':
                                                 print("YOu ordred:Murgh Makhani Biryani  \nBill:320 \nThank you for your order!")
@@ -638,122 +640,130 @@ if passed:
 
                 elif user_want == 3:
                     print("Here im am in the section of payemnt")
-                    if user_h=="1":
-                            if user_h1 == 1 and user_res == '2':
-                                if guests == 1 or guests == 2:
-                                    price = 500
-                                elif guests == 3 or guests == 4:
-                                    price = 900
-                                elif guests == 5 or guests == 8:
-                                    price = 1500
-                                elif guests >= 8:
-                                    price = 2500
-
-                                balance -= price
-                                print(f"Your table for {guests} guests is booked at Rooftop Dining. Remaining balance: ${balance}")
-
-                            elif user_h1 == 2 and user_res == '2':
-                                if guests == 1 or guests == 2:
-                                    price = 300
-                                elif guests ==3 or guests == 4:
-                                    price = 700
-                                elif guests == 5 or guests == 8:
-                                    price = 1100
-                                elif guests >= 8:
-                                    price = 2000
-
-                                balance -= price
-                                print(f"Your table for {guests} guests is booked at a Cozy Cafe. Remaining balance: ${balance}")
-
-                            elif user_h1 == 3 and user_res == '2':
-                                if guests == 1 or guests == 2:
-                                    price = 600
-                                elif guests == 3 or guests == 4:
-                                    price = 1000
-                                elif guests == 5 or guests == 8:
-                                    price = 1800
-                                elif guests >= 8:
-                                    price = 3000
-
-                                balance -= price
-                                print(f"Your table for {guests} guests is booked at an All You Can Eat Buffet. Remaining balance: ${balance}")
-                            else:
-                                pass
-                    elif user_h=="2":
-                        if user_h2=="1":
-                            if user_thali=="1" and user_north=="1":
-                                if user_punjabi=="1":
-                                    price=349
-                                elif user_punjabi=="2":
-                                    price=399
-                            elif  user_thali=="1" and user_north=="2":
-                                if user_gujju=="1":
-                                    price=299
-                                elif user_gujju=="2":
-                                    price=349
-                            else:
-                                print("order has not choosen yet!!!")
-                        elif user_h2=="2":
-                            if user_pizza=="1":
-                                if user_oven=="1" :
-                                    if oven_item=="1":
-                                        price=250
-                                    elif oven_item=="2":
-                                        price=320
-                                    else:
-                                        print("Wrong input/item for the order given")
-                                elif user_oven=="2":
-                                    if oven_item=="1":
-                                        price=300
-                                    elif oven_item=="2":
-                                        price=250
-                                    else:
-                                        print("Wrong input/item for the order given")
+                    if order:
+                        print("hello im in the order section ")
+                        price=0
+                        if user_h=="2":
+                            if user_h2=="1":
+                                if user_thali=="1" and user_north=="1":
+                                    if user_punjabi=="1":
+                                        price=349
+                                    elif user_punjabi=="2":
+                                        price=399
+                                elif  user_thali=="1" and user_north=="2":
+                                    if user_gujju=="1":
+                                        price=299
+                                    elif user_gujju=="2":
+                                        price=349
                                 else:
-                                    print("YOu have choosen wrong oven restaurant!!")
-                            elif user_pizza=="2":
-                                if user_fire=="1" :
-                                    if fire_item=="1":
-                                        price=350
-                                    elif fire_item=="2":
-                                        price=250
+                                    print("order has not choosen yet!!!")
+                            elif user_h2=="2":
+                                if user_pizza=="1":
+                                    if user_oven=="1" :
+                                        if oven_item=="1":
+                                            price=250
+                                        elif oven_item=="2":
+                                            price=320
+                                        else:
+                                            print("Wrong input/item for the order given")
+                                    elif user_oven=="2":
+                                        if oven_item=="1":
+                                            price=300
+                                        elif oven_item=="2":
+                                            price=250
+                                        else:
+                                            print("Wrong input/item for the order given")
                                     else:
-                                        print("Wrong item choosen that deosnt exist in the menu !")
-                                elif user_fire=="2":
-                                    if fire_item=="1":
-                                        price=360
-                                    elif fire_item=="2":
-                                        price=300
+                                        print("YOu have choosen wrong oven restaurant!!")
+                                elif user_pizza=="2":
+                                    if user_fire=="1" :
+                                        if fire_item=="1":
+                                            price=350
+                                        elif fire_item=="2":
+                                            price=250
+                                        else:
+                                            print("Wrong item choosen that deosnt exist in the menu !")
+                                    elif user_fire=="2":
+                                        if fire_item=="1":
+                                            price=360
+                                        elif fire_item=="2":
+                                            price=300
+                                        else:
+                                            print("Wrong item choosen that deosnt exist in the menu !")
                                     else:
-                                        print("Wrong item choosen that deosnt exist in the menu !")
+                                        print("YOu have choosen wrong oven restaurant!!")
                                 else:
-                                    print("YOu have choosen wrong oven restaurant!!")
-                            else:
-                                print("Please Choose a specific restaurant either 1 or 2")
-                            
+                                    print("Please Choose a specific restaurant either 1 or 2")
                                 
-                        elif user_h2=="3":
-                            if user_biryani=='1':
-                                if biryani_item=='1':
-                                    price=280
-                                elif biryani_item=='2':
-                                    price=240
+                                    
+                            elif user_h2=="3":
+                                if user_biryani=='1':
+                                    if biryani_item=='1':
+                                        price=280
+                                    elif biryani_item=='2':
+                                        price=240
+                                    else:
+                                        print("Wrong item choosen that deosnt exist in the menu !")
+                                elif user_biryani=='2':
+                                    if biryani_item=='1':
+                                        price=320
+                                    elif biryani_item=='2':
+                                        price=250
+                                    else:
+                                        print("WRong item choosen form the menu that doesnot exist")
                                 else:
-                                    print("Wrong item choosen that deosnt exist in the menu !")
-                            elif user_biryani=='2':
-                                if biryani_item=='1':
-                                    price=320
-                                elif biryani_item=='2':
-                                    price=250
-                                else:
-                                    print("WRong item choosen form the menu that doesnot exist")
+                                    print("You have choosen a wrong restaurant")
                             else:
-                                print("You have choosen a wrong restaurant")
+                                print("--------------------------------\npayment of order cant be proceeded !!!!!!!-------------------------------------\n")
+                            
+                            
+                            balance -= price
+                            print(f"Your order is about {price} Remaining balance: ${balance}")
+
                         else:
-                            print("--------------------------------\npayment of order cant be proceeded !!!!!!!-------------------------------------\n")
+                            print("Payment cant be done because of null order")
                     else:
-                        print("Payment cant be done because of null order")
-            
+                        if user_h=="1":
+                                if user_h1 == 1 and user_res == '2':
+                                    if guests == 1 or guests == 2:
+                                        price = 500
+                                    elif guests == 3 or guests == 4:
+                                        price = 900
+                                    elif guests == 5 or guests == 8:
+                                        price = 1500
+                                    elif guests >= 8:
+                                        price = 2500
+
+                                    balance -= price
+                                    print(f"Your table for {guests} guests is booked at Rooftop Dining. Remaining balance: ${balance}")
+
+                                elif user_h1 == 2 and user_res == '2':
+                                    if guests == 1 or guests == 2:
+                                        price = 300
+                                    elif guests ==3 or guests == 4:
+                                        price = 700
+                                    elif guests == 5 or guests == 8:
+                                        price = 1100
+                                    elif guests >= 8:
+                                        price = 2000
+
+                                    balance -= price
+                                    print(f"Your table for {guests} guests is booked at a Cozy Cafe. Remaining balance: ${balance}")
+
+                                elif user_h1 == 3 and user_res == '2':
+                                    if guests == 1 or guests == 2:
+                                        price = 600
+                                    elif guests == 3 or guests == 4:
+                                        price = 1000
+                                    elif guests == 5 or guests == 8:
+                                        price = 1800
+                                    elif guests >= 8:
+                                        price = 3000
+
+                                    balance -= price
+                                    print(f"Your table for {guests} guests is booked at an All You Can Eat Buffet. Remaining balance: ${balance}")
+                                else:
+                                    print("Payment cant be done because of null order")
         
     else:
         print("enter your location first")

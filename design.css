@@ -1,0 +1,51 @@
+/* Reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic html and body setup */
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+#box {
+  margin: 110px 40px 0px 200px;
+  height: 400px;
+  width: 800px;
+  border: 2px dotted aqua;
+  background-color: whitesmoke;
+  padding-left: 100px;
+  padding-top: 50px;
+  border-radius: 70px;
+  box-shadow: 5px 5px 44px 2px aquamarine;
+}
+
+#box1 {
+  height: 300px;
+  width: 600px;
+  border: 2px solid blue;
+  background-color: rgb(116, 103, 103);
+  box-shadow: 5px 5px 44px 2px black;
+  padding-left: 100px;
+  padding-top: 50px;
+  border-radius: 70px;
+}
+
+#box2 {
+  height: 200px;
+  width: 400px;
+  border: 2px solid green;
+  background-color: aquamarine;
+  background-image: url("https://images.unsplash.com/photo-1752035682766-0b1cd0edd1b1?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 5px 5px 44px 2px wheat;
+  border-radius: 70px;
+}

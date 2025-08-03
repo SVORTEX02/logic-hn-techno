@@ -1,0 +1,19 @@
+<script>
+  for (let i = 1, a = 1; i <= 50; i++, a++) {
+    for (let j = 1; j <= 50; j++) {
+      if (
+        (i == 1 && j <= 25) ||
+        (i == 50 && j >= 25) ||
+        (j == 25 && i <= 50) ||
+        (j == 50 && i <= 25) ||
+        i == 25 ||
+        (j == 1 && i >= 25)
+      ) {
+        document.write("*");
+      } else {
+        document.write("&nbsp; ");
+      }
+    }
+    document.write("</br>");
+  }
+</script>

@@ -1,0 +1,126 @@
+<script>
+  /*let h1 = 0;
+  for (let i = 1; i <= 5; i++) {
+    for (let j = 1; j <= 5; j++) {
+      h1++;
+      document.write(h1);
+      if (h1 >= 9) {
+        h1 = 0;
+      }
+    }
+    document.write("</br>");
+  }
+
+  document.writeln("</br> </br> </br>");*/
+  /*
+      12345
+      67898
+      76543
+      21234
+      56789
+
+      */
+/*
+  let h = 0;
+  let count = 0;
+  for (let i = 1; i <= 5; i++) {
+    for (let j = 1; j <= 5; j++) {
+      h++;
+      document.write(h);
+      if (h >= 9) {
+        h = 0;
+      }
+    }
+    document.write("</br>");
+  }
+
+  document.writeln("</br> </br> </br>");
+  */
+
+  /*
+      12345
+      67898
+      76543
+      21234
+      56789
+
+      */
+  let k = 0;
+  for (let i = 1; i <= 5; i++) {
+    for (let j = 1; j <= 5; j++) {
+      if (i == 1) {
+        k++;
+        document.write(k);
+      } else if (i == 2) {
+        if (j < 5) {
+          k++;
+          document.write(k);
+        } else {
+          k--;
+          document.write(k);
+        }
+      } else if (i == 3) {
+        k--;
+        document.write(k);
+      } else if (i == 4) {
+        if (j < 3) {
+          k--;
+          document.write(k);
+        } else {
+          k++;
+          document.write(k);
+        }
+      } else if (i == 5) {
+        k++;
+        document.write(k);
+      }
+    }
+
+    document.write("</br>");
+  }
+
+  /*
+let count = 0; 
+  for (let i = 0; i < 5; i++) {
+    for (let j = 1; j < 10; j++) {
+      document.write(j);
+      count++;
+      if (count == 5) {
+        document.write("</br>");
+        count = 0;
+      }
+    }
+    
+  }
+*/
+
+  /*
+   *****
+   ****
+   ***
+   **
+   * */
+
+  document.writeln("</br> </br> </br>");
+
+  for (let a = 1; a <= 5; a++) {
+    for (let b = 5; b >= a; b--) {
+      document.write("*");
+    }
+    document.write("</br>");
+  }
+
+  s = 100;
+  j = 650;
+  w = (j - s) / 5;
+
+  x = 790;
+  y = (x - s) / 5;
+
+  for (let p = s; p <= j; p += w) {
+    for (let q = x; q >= p; q -= y) {
+      document.write("*");
+    }
+    document.write("</br>");
+  }
+</script>

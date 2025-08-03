@@ -1,0 +1,21 @@
+/* Reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic html and body setup */
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+#box {
+  height: 200px;
+  width: 200px;
+  border: 2px solid aqua;
+}
